@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gaurav_port/light/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gaurav_port/home/home_page.dart';
+import 'package:gaurav_port/splash/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           bodyMedium: const TextStyle(color: bodyTextColor),
         ),
       ),
-      home: const HomePage(),
+      home: const SplashView(),
     );
   }
 }

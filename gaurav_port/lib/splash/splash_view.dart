@@ -2,8 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:gaurav_port/light/colors.dart';
 import 'package:gaurav_port/home/home_page.dart';
-import 'package:gaurav_port/intro/components/animated_texts_componenets.dart';
-import 'package:gaurav_port/splash/componenets/animated_loading_text.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -13,26 +12,55 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomePage(),));
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomePage(),
+          ));
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            AnimatedImageContainer(width: 100, height: 100),
-            SizedBox(height: defaultPadding),
-            AnimatedLoadingText(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          Center(
+            child: SizedBox(
+                height: 100,
+                width: 100,
+                child: Image.asset("assets/images/gaurav.jpg")),
+          ),
+          Positioned(
+            bottom: 40,
+            left: 0,
+            right: 0,
+            child: Column(
+              children: [
+                Text(
+                  "from",
+                  style: GoogleFonts.openSans(
+                    color: Colors.white.withOpacity(0.5),
+                    fontSize: 12,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  "Gaurav",
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 1.5,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

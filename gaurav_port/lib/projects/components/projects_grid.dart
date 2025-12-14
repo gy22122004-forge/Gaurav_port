@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
-// YOUR MODELS
 import 'package:gaurav_port/model/work_done.dart';
-
-// COLORS
 import 'package:gaurav_port/light/colors.dart';
-
-// CONTROLLER
 import 'package:gaurav_port/view model/getx_controllers/projects_controller.dart';
 
 class ProjectGrid extends StatelessWidget {
@@ -42,29 +37,27 @@ class ProjectGrid extends StatelessWidget {
 
             return AnimatedContainer(
               duration: const Duration(milliseconds: 250),
-              height: 350,
+
 
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
-
-                // OUTER GLOW BORDER LIKE YOUR UI
                 gradient: const LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.lightGreenAccent,
-                    Colors.blueAccent,
+                    Color(0xFF00FF85), // green
+                    Color(0xFF0096FF),
                   ],
                 ),
 
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.pinkAccent,
+                    color: Colors.pink,
                     offset: const Offset(-2, 0),
                     blurRadius: isHovering ? 35 : 18,
                   ),
                   BoxShadow(
-                    color: Colors.white,
+                    color: Colors.blue,
                     offset: const Offset(2, 0),
                     blurRadius: isHovering ? 35 : 18,
                   ),
@@ -83,7 +76,6 @@ class ProjectGrid extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        // ********** TITLE **********
                         Text(
                           projectList[index].name,
                           maxLines: 2,
@@ -95,8 +87,6 @@ class ProjectGrid extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 8),
-
-                        // ********** DESCRIPTION **********
                         Text(
                           projectList[index].description,
                           maxLines: 3,
@@ -108,8 +98,6 @@ class ProjectGrid extends StatelessWidget {
                         ),
 
                         const SizedBox(height: 10),
-
-                        // ********** BULLET POINTS (SCROLLABLE) **********
                         Expanded(
                           child: ListView(
                             physics: const BouncingScrollPhysics(),
@@ -146,8 +134,6 @@ class ProjectGrid extends StatelessWidget {
                         ),
 
                         const SizedBox(height: 12),
-
-                        // ********** VIEW PROJECT BUTTON **********
                         Align(
                           alignment: Alignment.bottomRight,
                           child: InkWell(
@@ -170,14 +156,14 @@ class ProjectGrid extends StatelessWidget {
                                 // MATCH EXACT BUTTON STYLE FROM YOUR SCREENSHOT
                                 gradient: LinearGradient(
                                   colors: [
-                                    Colors.pinkAccent.shade200,
+                                    Colors.pink,
                                     Colors.blue.shade900,
                                   ],
                                 ),
 
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.pinkAccent,
+                                    color: Colors.pink,
                                     blurRadius: 12,
                                     offset: const Offset(0, 3),
                                   )
