@@ -8,6 +8,6 @@ echo "Flutter verification..."
 flutter doctor -v
 
 echo "Building Web Project..."
-flutter build web --release
+flutter build web --web-renderer html --release
 
 echo "Build successful!"
