@@ -1,8 +1,8 @@
 {
-    "rewrites": [
-        {
-            "source": "/((?!.*\\.).*)",
-            "destination": "/index.html"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/((?!assets|icons|favicon.ico|manifest.json|flutter.js|main.dart.js).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
