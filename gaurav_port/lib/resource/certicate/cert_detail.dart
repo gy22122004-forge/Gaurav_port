@@ -16,7 +16,6 @@ class CertificateStack extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // 🔥 TITLE
         Text(
           certificateList[index].name,
           maxLines: 1,
@@ -29,8 +28,6 @@ class CertificateStack extends StatelessWidget {
         ),
 
         const SizedBox(height: 6),
-
-        // 🔥 ORGANIZATION + DATE
         Row(
           children: [
             Expanded(
@@ -49,8 +46,6 @@ class CertificateStack extends StatelessWidget {
         ),
 
         const SizedBox(height: 10),
-
-        // 🔥 THIS PART SCROLLS (Keeps sequence correct)
         Expanded(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
@@ -73,7 +68,6 @@ class CertificateStack extends StatelessWidget {
 
         const SizedBox(height: 12),
 
-        // 🔥 CREDENTIAL BUTTON
         InkWell(
           onTap: () => launchUrl(Uri.parse(certificateList[index].credential)),
           child: Container(
